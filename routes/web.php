@@ -28,3 +28,9 @@ Route::group(['middleware' => ['web','login']], function () {
 	Route::post('/wtb/new', 'WtbController@createNewWtb');
 	Route::get('/wtb/{wtbId}', 'WtbController@showWtbDetail');
 });
+
+Route::get('/', 'StaticPagesController@home');
+Route::get('/help', 'StaticPagesController@help');
+Route::get('/about', 'StaticPagesController@about');
+
+Route::get('product','ProductsController@create')->name('product');
