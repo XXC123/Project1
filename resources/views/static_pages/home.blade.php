@@ -10,6 +10,7 @@
     </p>
     <p>
       <a class="btn btn-lg btn-success" href="{{ route('product')}} "  role="button">Sell</a>
+      <a class="btn btn-lg btn-success" href="{{ route('search')}} "  role="button">Match</a>
     </p>
   </div>
 @stop

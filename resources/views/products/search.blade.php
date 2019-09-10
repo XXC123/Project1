@@ -1,16 +1,16 @@
 @extends('layouts.default')
-@section('title', 'NewProduct')
+@section('title', 'Search')
 
 @section('content')
 <div class="offset-md-2 col-md-8">
   <div class="card ">
     <div class="card-header">
-      <h5>To Sell</h5>
+      <h5>To Match</h5>
     </div>
     <div class="card-body">
       @include('shared._errors')
 
-      <form method="POST" action="{{ route('products.store') }}">
+      <form method="POST" action="{{ route('products.searchproduct') }}">
         {{ csrf_field() }}
           <div class="form-group">
             <label for="brandname">Brandname：</label>
@@ -27,7 +27,7 @@
             <input type="text" name="size" class="form-control" value="">
           </div>
 
-          <button type="submit" class="btn btn-primary">Post</button>
+          <button type="submit" class="btn btn-primary">Search</button>
       </form>
     </div>
   </div>

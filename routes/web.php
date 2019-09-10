@@ -11,26 +11,16 @@
 |
 */
 
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Route::post('/login', 'CustomerController@customerLogin');
-Route::post('/register', 'CustomerController@customerRegister');
-
-Route::group(['middleware' => ['web','login']], function () {
-	Route::get('/', 'CustomerController@showHomePage');
-	Route::get('/logout', 'CustomerController@customerLogout');
-	Route::get('/wtb/list', 'WtbController@showWtbList');
-	Route::get('/wtb/new', 'WtbController@showNewWtb');
-	Route::post('/wtb/new', 'WtbController@createNewWtb');
-	Route::get('/wtb/{wtbId}', 'WtbController@showWtbDetail');
-});
-
 Route::get('/', 'StaticPagesController@home');
 Route::get('/help', 'StaticPagesController@help');
 Route::get('/about', 'StaticPagesController@about');
 
 Route::get('product','ProductsController@create')->name('product');
+Route::get('search','ProductsController@search')->name('search');
+Route::resource('products', 'ProductsController');
+
+//Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+//Route::post('/users', 'UsersController@store')->name('users.store');
+
+Route::post('/users/searchproduct', 'ProductsController@searchproduct')->name('products.searchproduct');
+Route::get('/users/{color}/{brandname}/{size}', 'ProductsController@getpost')->name('products.getpost');
