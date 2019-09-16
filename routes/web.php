@@ -14,11 +14,19 @@
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/managerLogin', function () {
+    return view('managers.managerLogin');
+});
+Route::get('/managerRegister', function () {
+    return view('managers.managerRegister');
+});
 Route::get('/register', function () {
     return view('register');
 });
 Route::post('/login', 'CustomerController@customerLogin');
 Route::post('/register', 'CustomerController@customerRegister');
+Route::post('/managerLogin', 'ManagerController@managerLogin');
+Route::post('/managerRegister', 'ManagerController@managerRegister');
 
 Route::group(['middleware' => ['web','login']], function () {
 	Route::get('/', 'CustomerController@showHomePage');
