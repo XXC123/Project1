@@ -36,14 +36,11 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{url('/')}}"> <i class="menu-icon fa fa-dashboard"></i>Home </a>
+                        <a href="{{url('/managerMenu')}}"> <i class="menu-icon fa fa-dashboard"></i>Home </a>
                     </li>
                     <h3 class="menu-title">Want to Buy</h3>
                      <li>
-                        <a id="logout-btn" href="{{url('/wtb/list')}}"><i class="menu-icon fa fa-puzzle-piece"></i>List</a>
-                     </li>
-                     <li>
-                        <a id="logout-btn" href="{{url('/wtb/new')}}"><i class="menu-icon fa fa-puzzle-piece"></i>New</a>
+                        <a id="logout-btn" href="{{url('/manager/managerList')}}"><i class="menu-icon fa fa-puzzle-piece"></i>List</a>
                      </li>
                     <h3 class="menu-title">Setting</h3>
                      <li>

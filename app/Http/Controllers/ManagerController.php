@@ -25,27 +25,6 @@ class ManagerController extends Controller{
 			return view('login')->with('errorMsg', "Invalid email or password, please try again");
    		}
 	}
-	public function managerRegister(){
-		$input = Input::all();
-		$manager = Manager::where('email', $input['email'])->first();
-    	if($manager){
-      	 	return view('register')->with('errorMsg', "Email has been used");
-       	}
-
-       	if($input['password'] != $input['re-password']) {
-       		return view('register')->with('errorMsg', 'Please enter the same password');
-       	}
-
-		$newManager = new Manager;
-		$newManager->email = $input['email'];
-		$newManager->name = $input['name'];	
-		$newManager->password = $input['password'];
-		$newManager->address = $input['address'];
-		$newManager->save();
-
-		return view('register')->with('successMsg', 'Registed successful, please login in.');
-
-	}
 
 
 	public function managerLogout(){
@@ -56,6 +35,6 @@ class ManagerController extends Controller{
 
 
 	public function showHomePage(){
-		return view('home');
+		return view('/layouts/managerMenu');
 	}
 }

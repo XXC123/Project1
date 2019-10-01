@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.managerMenu')
 @section('css')
 @endsection
 
@@ -27,6 +27,7 @@
                                     <th>User</th>
                                     <th>Created at</th>
                                     <th>Updated at</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,6 +37,7 @@
                                     <td>{{$wtb->customer->name}}</td>
                                     <td>{{$wtb->created_at}}</td>
                                     <td>{{$wtb->updated_at}}</td>
+                                    <td><a href="./delete{{$wtb->id}}"><button>Delete</button></a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

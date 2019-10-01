@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Coffee Buzz - Login</title>
+    <title>Manager - Login</title>
     <meta name="description" content="Coffee Buzz - Login">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('resources/community/sufee-admin/assets/css/normalize.css')}}">
@@ -25,7 +25,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Login</h1>
+                                <h1>Manager-Login</h1>
                             </div>
                         </div>
                     </div>
@@ -54,9 +54,6 @@
                         </div>
                         <div class="form-group">
                             <button id="login-btn" type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
-                        </div>
-                        <div class="form-group">
-                            <a href="{{url('/managerRegister')}}" class="btn btn-success btn-flat m-b-30 m-t-30">New user</a>
                         </div>
                     </form>
                 </div>

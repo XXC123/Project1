@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Session;
 use App\Http\Models\WTB;
 
@@ -12,6 +14,11 @@ class WtbController extends Controller{
 	public function showWtbList(){
 		$wtbs = WTB::all();
 		return view('wtb.list')->with('wtbs', $wtbs);
+	}
+
+	public function managerShowWtbList(){
+		$wtbs = WTB::all();
+		return view('manager.managerList')->with('wtbs', $wtbs);
 	}
 
 	public function showNewWtb(){
@@ -28,6 +35,15 @@ class WtbController extends Controller{
 		$newWtb->save();
 
 		return redirect('/wtb/list');
+	}
+	public function deleteWtb($id){
+
+		$wtbs=WTB::find($id);
+		$wtbs->delete();
+
+		
+
+		return redirect('/manager/managerList');
 	}
 
 	public function showWtbDetail($wtbId){
