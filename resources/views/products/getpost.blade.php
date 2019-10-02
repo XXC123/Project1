@@ -690,34 +690,172 @@ $productzero=$a->zeromatch($color,$brandname,$size,$price,$year,$series);
 @section('title', 'Result')
 
 @section('content')
+<style type="text/css">
+#display{visibility :hidden;}
+</style>
 
+<input type="button" onclick="display();" value="Details">
+<input type="button" onclick="displaysimple();" value="Simple">
 
+  <div id="displaysimple">
 <table class="table table-striped table-bordered table-hover">
-        <thead><tr><th>ID</th><th>Brandname</th><th>Color</th><th>Size</th><th>Price</th><th>Year</th><th>Series Name</th><th>Similarity</th></tr></thead>
+
+        <thead><tr><th>Image</th>
+          <th>Similarity</th></tr></thead>
         <tbody>
+
+
+          @if(!empty($productx))
             @foreach($productx as $product)
-            <tr><td>{{ $product->id }}</td><td>{{ $product->brandname }}</td><td>{{ $product->color }}</td><td>{{ $product->size }}</td><td>{{ $product->price }}</td><td>{{ $product->year }}</td><td>{{ $product->series }}</td><td> 100% </td></tr>
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+
+              <td> 100% </td></tr>
             @endforeach
+          @endif
+
+          @if(!empty($productno))
             @foreach($productno as $product)
-            <tr><td>{{ $product->id }}</td><td>{{ $product->brandname }}</td><td>{{ $product->color }}</td><td>{{ $product->size }}</td><td>{{ $product->price }}</td><td>{{ $product->year }}</td><td>{{ $product->series }}</td><td> 83.33% </td></tr>
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+
+                  <td> 83.33% </td></tr>
             @endforeach
+          @endif
+
+          @if(!empty($productfour))
             @foreach($productfour as $product)
-            <tr><td>{{ $product->id }}</td><td>{{ $product->brandname }}</td><td>{{ $product->color }}</td><td>{{ $product->size }}</td><td>{{ $product->price }}</td><td>{{ $product->year }}</td><td>{{ $product->series }}</td><td> 66.67% </td></tr>
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+
+              <td> 66.67% </td></tr>
             @endforeach
+          @endif
+
+          @if(!empty($productthree))
             @foreach($productthree as $product)
-            <tr><td>{{ $product->id }}</td><td>{{ $product->brandname }}</td><td>{{ $product->color }}</td><td>{{ $product->size }}</td><td>{{ $product->price }}</td><td>{{ $product->year }}</td><td>{{ $product->series }}</td><td> 50% </td></tr>
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+
+              <td> 50% </td></tr>
             @endforeach
+          @endif
+
+          @if(!empty($producttwo))
             @foreach($producttwo as $product)
-            <tr><td>{{ $product->id }}</td><td>{{ $product->brandname }}</td><td>{{ $product->color }}</td><td>{{ $product->size }}</td><td>{{ $product->price }}</td><td>{{ $product->year }}</td><td>{{ $product->series }}</td><td> 33.33% </td></tr>
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+
+              <td> 33.33% </td></tr>
             @endforeach
+          @endif
+
+          @if(!empty($productone))
             @foreach($productone as $product)
-            <tr><td>{{ $product->id }}</td><td>{{ $product->brandname }}</td><td>{{ $product->color }}</td><td>{{ $product->size }}</td><td>{{ $product->price }}</td><td>{{ $product->year }}</td><td>{{ $product->series }}</td><td> 16.67% </td></tr>
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+
+                <td> 16.67% </td></tr>
             @endforeach
+          @endif
+
+          @if(!empty($productzero))
             @foreach($productzero as $product)
-            <tr><td>{{ $product->id }}</td><td>{{ $product->brandname }}</td><td>{{ $product->color }}</td><td>{{ $product->size }}</td><td>{{ $product->price }}</td><td>{{ $product->year }}</td><td>{{ $product->series }}</td><td> 0% </td></tr>
+            <tr><td><img src="../../../../../../{{$product->img}}">
+
+              <td> 0% </td></tr>
             @endforeach
+          @endif
+
+
         </tbody>
     </table>
+   </div>
+
+  <div id="display">
+<table class="table table-striped table-bordered table-hover">
+
+        <thead><tr><th>Image</th>
+
+            <th >ID</th><th >Brandname</th><th >Color</th><th >Size</th><th >Price</th><th >Year</th><th >Series Name</th>
+          </div>
+          <th>Similarity</th></tr></thead>
+        <tbody>
+
+
+          @if(!empty($productx))
+            @foreach($productx as $product)
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+                <td >{{ $product->id }}</td><td >{{ $product->brandname }}</td><td >{{ $product->color }}</td><td >{{ $product->size }}</td><td >{{ $product->price }}</td><td >{{ $product->year }}</td><td >{{ $product->series }}</td>
+              <td> 100% </td></tr>
+            @endforeach
+          @endif
+
+          @if(!empty($productno))
+            @foreach($productno as $product)
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+                <td >{{ $product->id }}</td><td >{{ $product->brandname }}</td><td >{{ $product->color }}</td><td >{{ $product->size }}</td><td >{{ $product->price }}</td><td >{{ $product->year }}</td><td >{{ $product->series }}</td>
+                  <td> 83.33% </td></tr>
+            @endforeach
+          @endif
+
+          @if(!empty($productfour))
+            @foreach($productfour as $product)
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+                <td >{{ $product->id }}</td><td >{{ $product->brandname }}</td><td >{{ $product->color }}</td><td >{{ $product->size }}</td><td >{{ $product->price }}</td><td >{{ $product->year }}</td><td >{{ $product->series }}</td>
+              <td> 66.67% </td></tr>
+            @endforeach
+          @endif
+
+          @if(!empty($productthree))
+            @foreach($productthree as $product)
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+                <td >{{ $product->id }}</td><td >{{ $product->brandname }}</td><td >{{ $product->color }}</td><td >{{ $product->size }}</td><td >{{ $product->price }}</td><td >{{ $product->year }}</td><td >{{ $product->series }}</td>
+              <td> 50% </td></tr>
+            @endforeach
+          @endif
+
+          @if(!empty($producttwo))
+            @foreach($producttwo as $product)
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+                <td >{{ $product->id }}</td><td >{{ $product->brandname }}</td><td >{{ $product->color }}</td><td >{{ $product->size }}</td><td >{{ $product->price }}</td><td >{{ $product->year }}</td><td >{{ $product->series }}</td>
+              <td> 33.33% </td></tr>
+            @endforeach
+          @endif
+
+          @if(!empty($productone))
+            @foreach($productone as $product)
+            <tr><td><img src="../../../../../../{{$product->img}}"></td>
+                <td >{{ $product->id }}</td><td >{{ $product->brandname }}</td><td >{{ $product->color }}</td><td >{{ $product->size }}</td><td >{{ $product->price }}</td><td >{{ $product->year }}</td><td >{{ $product->series }}</td>
+                <td> 16.67% </td></tr>
+            @endforeach
+          @endif
+
+          @if(!empty($productzero))
+            @foreach($productzero as $product)
+            <tr><td><img src="../../../../../../{{$product->img}}">
+                <td >{{ $product->id }}</td><td >{{ $product->brandname }}</td><td >{{ $product->color }}</td><td >{{ $product->size }}</td><td >{{ $product->price }}</td><td >{{ $product->year }}</td><td >{{ $product->series }}</td>
+              <td> 0% </td></tr>
+            @endforeach
+          @endif
+
+
+        </tbody>
+    </table>
+   </div>
+
+<script type="text/javascript">
+      function display(){
+        var a=document.getElementById("displaysimple");
+         var b=document.getElementById("display");
+
+        a.style.display="none";
+        b.style.visibility="visible";
+
+      }
+      function displaysimple(){
+        var a=document.getElementById("displaysimple");
+         var b=document.getElementById("display");
+
+        a.style.display="block";
+        b.style.visibility="hidden";
+
+      }
+    </script>
 
 
 @stop

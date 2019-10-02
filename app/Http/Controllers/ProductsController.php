@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 
 use Illuminate\Http\Request;
+use App\Models\img;
+
+use Illuminate\Http\Response;
+use Redirect,View;
+use Input,DB;
 
 class ProductsController extends Controller
 {
+
     public function create(){
         return view('products.create');
     }
@@ -20,6 +26,12 @@ class ProductsController extends Controller
     {
         return view('products.show', compact('product'));
     }
+
+
+  public function __construct(){
+    $this->img = new img;
+  }
+
 
 public function searchproduct(Request $request)
     {
@@ -58,6 +70,16 @@ public function searchproduct(Request $request)
             'series' => 'required|max:20'
         ]);
 
+        if($request->file('cover')->isValid()){
+         $file=$request->file('cover');
+     }
+        $path='image';
+        $rule=['jpg','png','gif'];
+
+        $img=$this->img->upload_img($file,$path,$rule);
+
+
+
          $product = Product::create([
             'brandname' => $request->brandname,
             'color' => $request->color,
@@ -65,6 +87,7 @@ public function searchproduct(Request $request)
             'price' => $request->price,
         'year' => $request->year,
         'series' => $request->series,
+        'img'=>$img,
         ]);
 
 

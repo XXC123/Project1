@@ -13,7 +13,7 @@ class Product extends Model
     protected $table = 'saleshoes';
 
      protected $fillable = [
-        'brandname', 'color', 'size','price','year','series'
+        'brandname', 'color', 'size','price','year','series','img'
     ];
     public $timestamps = false;
 }

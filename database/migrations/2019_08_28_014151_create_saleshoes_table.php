@@ -23,6 +23,7 @@ class CreateSaleshoesTable extends Migration
             $table->integer('price');
             $table->integer('year');
             $table->string('series');
+            $table->string('img');
         });
     }
 

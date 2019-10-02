@@ -10,7 +10,7 @@
     <div class="card-body">
       @include('shared._errors')
 
-      <form method="POST" action="{{ route('products.store') }}">
+      <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
           <div class="form-group">
             <label for="brandname">Brandname：</label>
@@ -42,10 +42,15 @@
             <input type="text" name="year" class="form-control" value="">
           </div>
 
+          <div class="form-group">
+            <label >Image：</label>
+            <input type="file" name="cover" id="">
+          </div>
+
 
           <button type="submit" class="btn btn-primary">Post</button>
       </form>
-    </div>
+
   </div>
 </div>
 @stop
