@@ -26,7 +26,7 @@ Route::post('/register', 'CustomerController@customerRegister');
 Route::post('/managerLogin', 'ManagerController@managerLogin');
 Route::post('/managerRegister', 'ManagerController@managerRegister');
 Route::get('/manager/managerList', 'WtbController@managerShowWtbList');
-
+Route::any('mail/send','MailController@send');
 
 Route::get('/manager/delete{id}', 'WtbController@deleteWtb');
 Route::group(['middleware' => ['web','login']], function () {
@@ -37,3 +37,14 @@ Route::group(['middleware' => ['web','login']], function () {
 	Route::post('/wtb/new', 'WtbController@createNewWtb');
 	Route::get('/wtb/{wtbId}', 'WtbController@showWtbDetail');
 });
+
+
+Route::get('product','ProductsController@create')->name('product');
+Route::get('search','ProductsController@search')->name('search');
+Route::resource('products', 'ProductsController');
+
+//Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+//Route::post('/users', 'UsersController@store')->name('users.store');
+
+Route::post('/users/searchproduct', 'ProductsController@searchproduct')->name('products.searchproduct');
+Route::get('/users/{color}/{brandname}/{size}/{price}/{year}/{series}', 'ProductsController@getpost')->name('products.getpost');

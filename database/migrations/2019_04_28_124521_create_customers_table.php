@@ -29,6 +29,7 @@ class CreateCustomersTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('wtbs');
         Schema::dropIfExists('customers');
     }
 }
