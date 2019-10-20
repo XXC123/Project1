@@ -32,7 +32,7 @@
                 </div>
                 <div class="login-form">
                     <div class="login-logo">
-                        <img class="align-content" src="{{asset('resources/images/logo.jpg')}}" alt="" width="55%">
+                        <img class="align-content" src="{{asset('resources/images/managericon.png')}}" alt="" width="55%">
                     </div>                    
                     <br/>
                     <form role="form" action="" method="post">
@@ -46,14 +46,14 @@
                         @endif
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" placeholder="Email" name="email" required>
+                            <input id="email" type="email" class="form-control" placeholder="Email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password" name="password" required>
+                            <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
                         </div>
                         <div class="form-group">
-                            <button id="login-btn" type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+                            <button id="login-btn" type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Login</button>
                         </div>
                     </form>
                 </div>

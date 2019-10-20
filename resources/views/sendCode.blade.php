@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>StockY - Register</title>
+    <title>StockY - Verification Code</title>
     <meta name="description" content="Coffee Buzz - Register">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('resources/community/sufee-admin/assets/css/normalize.css')}}">
@@ -25,7 +25,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Register</h1>
+                                <h1>Verification Code</h1>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,8 @@
                         <img class="align-content" src="{{asset('resources/images/logo.jpg')}}" alt="" width="55%">
                     </div>                    
                     <br/>
-                    <form role="form" action="" method="post">
+                    
+                    <form role="form" action="./sendCode" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         @if(isset($errorMsg))
                         <div class="form-group">
@@ -55,34 +56,36 @@
                         </div>
                         @else
                         <div class="form-group">
-                            <label>Email</label>
-                            <input id="email" type="email" class="form-control" placeholder="Email" name="email" 
-                            value="{{ isset($email) ? $email : '' }}" readonly="readonly">
+                            <label>Email</label> 
+                            <input type="email" class="form-control" placeholder="your email" name="email" 
+                            value="{{ isset($email) ? $email : '' }}" 
+                             required>
                         </div>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input id="name" type="text" class="form-control" placeholder="Name" name="name" required>
+                         <div class="form-group">
+                        <label>Code</label>
+                            <input id="code" type="text" class="form-control" placeholder="your code" name="code">
                         </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
+
+                         <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Send</button>
                         </div>
-                        <div class="form-group">
-                            <label>Re-Password</label>
-                            <input id="re-password" type="password" class="form-control" placeholder="Re-Password" name="re-password" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <input id="address" dusk="address" type="text" class="form-control" placeholder="Address" name="address">
-                        </div>
-                        <div class="form-group">
-                            <button id="register-button" dusk="register-button" type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
-                        </div>
-                        <div class="form-group">
-                            <a href="{{url('/')}}" class="btn btn-success btn-flat m-b-30 m-t-30">Back</a>
-                        </div>
-                        @endif
+                        
+                        
                     </form>
+                    <form role="form" action="./sendCode/vertified" method="post">
+                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                         <div class="form-group">
+                            <input id="hidden-email" type="hidden" class="form-control" placeholder="your email" name="email" value="{{ isset($email) ? $email : '' }}"
+                             required>
+                             </div>
+                             <div class="form-group">
+                            <input id="hidden-code" type="hidden" class="form-control" placeholder="your code" name="code">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" onclick="initInputValue()">Comfire</button>
+                        </div>
+                    </form>
+               @endif
                 </div>
             </div>
         </div>
@@ -94,6 +97,11 @@
     <script src="{{asset('resources/community/sufee-admin/assets/js/plugins.js')}}"></script>
     <script src="{{asset('resources/community/sufee-admin/assets/js/main.js')}}"></script>
     <!-- Scripts End -->
-
+    <script type="text/javascript">
+function initInputValue() {
+document.getElementById("hidden-code").value = document.getElementById("code").value
+}
+       
+    </script>>
 </body>
 

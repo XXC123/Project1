@@ -57,11 +57,11 @@
                         <div class="form-group">
                             <label>Email</label>
                             <input id="email" type="email" class="form-control" placeholder="Email" name="email" 
-                            value="{{ isset($email) ? $email : '' }}" readonly="readonly">
+                            value="{{ isset($email) ? $email : '' }}" >
                         </div>
                         <div class="form-group">
                             <label>Name</label>
-                            <input id="name" type="text" class="form-control" placeholder="Name" name="name" required>
+                            <input id="name"type="text" class="form-control" placeholder="Name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
@@ -73,10 +73,10 @@
                         </div>
                         <div class="form-group">
                             <label>Address</label>
-                            <input id="address" dusk="address" type="text" class="form-control" placeholder="Address" name="address">
+                            <input id="address" type="text" class="form-control" placeholder="Address" name="address">
                         </div>
                         <div class="form-group">
-                            <button id="register-button" dusk="register-button" type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
+                            <button id="register-btn" type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
                         </div>
                         <div class="form-group">
                             <a href="{{url('/')}}" class="btn btn-success btn-flat m-b-30 m-t-30">Back</a>

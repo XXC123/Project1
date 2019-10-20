@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Coffee Buzz Manger System</title>
+    <title>StockY Manger System</title>
     <meta name="description" content="Coffee Buzz Manger System">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('resources/community/sufee-admin/assets/css/normalize.css')}}">
@@ -40,7 +40,7 @@
                     </li>
                     <h3 class="menu-title">Want to Buy</h3>
                      <li>
-                        <a id="logout-btn" href="{{url('/manager/managerList')}}"><i class="menu-icon fa fa-puzzle-piece"></i>List</a>
+                        <a id="list-btn" href="{{url('/manager/managerList')}}"><i class="menu-icon fa fa-puzzle-piece"></i>List</a>
                      </li>
                     <h3 class="menu-title">Setting</h3>
                      <li>

@@ -6,7 +6,7 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class LoginTest extends DuskTestCase
+class MatchTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
@@ -20,7 +20,15 @@ class LoginTest extends DuskTestCase
             ->type('#email', 't001@test.com')
             ->type('#password', '12345')
             ->click('#login-btn')
-            ->assertSee('Home');
+             ->click('#match-btn')
+            ->type('brandname', 'nike')
+             ->type('color', 'red')
+->type('size', '11')
+ ->type('price', '30')
+  ->type('series', '30')
+ ->type('year', '2015')
+ ->click('#search-btn')
+->assertSee( 'Similarity');
         });
     }
 }

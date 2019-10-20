@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>StockY - Login</title>
-    <meta name="description" content="Coffee Buzz - Login">
+    <title>StockY - Verification Code</title>
+    <meta name="description" content="Coffee Buzz - Register">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('resources/community/sufee-admin/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('resources/community/sufee-admin/assets/css/bootstrap.min.css')}}">
@@ -25,7 +25,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Login</h1>
+                                <h1>Verification Code</h1>
                             </div>
                         </div>
                     </div>
@@ -35,29 +35,15 @@
                         <img class="align-content" src="{{asset('resources/images/logo.jpg')}}" alt="" width="55%">
                     </div>                    
                     <br/>
-                    <form role="form" action="" method="post">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        @if(isset($errorMsg))
+                    <form role="form" action="./verificationCode/vertified" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">                   
                         <div class="form-group">
-                          <div class="alert alert-danger" role="alert">
-                           {{$errorMsg}}
-                          </div>
-                        </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input id="email" type="email" class="form-control" placeholder="Email" name="email" required>
+                            <label>Code</label>
+                            <input type="text" class="form-control" placeholder="your code" name="code">
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
-                            <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
-                        </div>
-                        <div class="form-group">
-                            <button id="login-btn" type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
-                        </div>
-                        <div class="form-group">
-                            <a href="{{url('/sendCode')}}" class="btn btn-success btn-flat m-b-30 m-t-30">New user</a>
-                        </div>
+                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Comfaaaaaire</button>
+                        </div>      
                     </form>
                 </div>
             </div>
@@ -70,6 +56,5 @@
     <script src="{{asset('resources/community/sufee-admin/assets/js/plugins.js')}}"></script>
     <script src="{{asset('resources/community/sufee-admin/assets/js/main.js')}}"></script>
     <!-- Scripts End -->
-
 </body>
 

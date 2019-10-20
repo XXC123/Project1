@@ -37,7 +37,7 @@
                                     <td>{{$wtb->customer->name}}</td>
                                     <td>{{$wtb->created_at}}</td>
                                     <td>{{$wtb->updated_at}}</td>
-                                    <td><a href="./delete{{$wtb->id}}"><button>Delete</button></a></td>
+                                    <td><a href="./delete{{$wtb->id}}"><button id="delete-btn">Delete</button></a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

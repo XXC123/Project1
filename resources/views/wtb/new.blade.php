@@ -26,7 +26,7 @@
                         <textarea type="text" name="context" class="form-control" row="10" required>What do you want to buy?</textarea>
                     </div>
                 </div>
-                <div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm">Submit</button></div>
+                <div class="form-actions form-group"><button id="submit-btn" type="submit" class="btn btn-success btn-sm">Submit</button></div>
             </form>
         </div>
     </div>

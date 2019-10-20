@@ -5,8 +5,8 @@
 @section('content')
 home
     <p>
-      <a class="btn btn-lg btn-success" href="{{ route('product')}} "  role="button">Sell</a>
-      <a class="btn btn-lg btn-success" href="{{ route('search')}} "  role="button">Match</a>
+      <a id="sell-btn" class="btn btn-lg btn-success" href="{{ route('product')}} "  role="button">Sell</a>
+      <a id="match-btn" class="btn btn-lg btn-success" href="{{ route('search')}} "  role="button">Match</a>
     </p>
 @endsection
 

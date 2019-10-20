@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
 use App\Http\Models\Customer;
-
+use App\Http\Models\VerificationCode;
 class CustomerController extends Controller{
 	public function customerLogin(Request $request){
 		$input = Input::all();
@@ -53,7 +53,21 @@ class CustomerController extends Controller{
 		return view('register')->with('successMsg', 'Registed successful, please login in.');
 
 	}
+	public function vertified(){
+		$input = Input::all();
 
+		if(!$input['email']){
+			return view('sendCode')->with('errorMsg', "Please send verification Code first");
+		}
+		$code = VerificationCode::where('email',$input['email'])->orderBy('created_at', 'desc')->first()->code;
+		if(!$code){
+			return view('sendCode')->with('errorMsg', "Please send verification Code first");
+		}
+		if($code == $input['code']){
+
+			return view('register')->with('email', $input['email']);
+		}
+	}
 	public function showHomePage(){
 		return view('home');
 	}

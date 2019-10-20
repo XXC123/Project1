@@ -44,7 +44,7 @@
           </div>
 
 
-          <button type="submit" class="btn btn-primary">Search</button>
+          <button id="search-btn" type="submit" class="btn btn-primary">Search</button>
       </form>
     </div>
   </div>

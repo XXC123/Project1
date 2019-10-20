@@ -17,6 +17,9 @@ Route::get('/login', function () {
 Route::get('/managerLogin', function () {
     return view('manager.managerLogin');
 });
+Route::get('/managerRegister', function () {
+    return view('manager.managerRegister');
+});
 Route::get('/managerMenu', 'ManagerController@showHomePage');
 Route::get('/register', function () {
     return view('register');
@@ -26,8 +29,17 @@ Route::post('/register', 'CustomerController@customerRegister');
 Route::post('/managerLogin', 'ManagerController@managerLogin');
 Route::post('/managerRegister', 'ManagerController@managerRegister');
 Route::get('/manager/managerList', 'WtbController@managerShowWtbList');
-Route::any('mail/send','MailController@send');
-
+//
+Route::get('/registerTest', function () {
+    return view('registerTest');
+});
+Route::post('/registerTest', 'CustomerController@customerRegister');
+Route::get('/sendCode', function () {
+    return view('sendCode');
+});
+Route::post('/sendCode/vertified', 'CustomerController@vertified');
+Route::post('/sendCode', 'MailController@send');
+//
 Route::get('/manager/delete{id}', 'WtbController@deleteWtb');
 Route::group(['middleware' => ['web','login']], function () {
 	Route::get('/', 'CustomerController@showHomePage');
