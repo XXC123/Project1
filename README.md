@@ -70,3 +70,30 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+StockY
+
+Group member：
+Xiaochen Xi
+Yiqing Ding
+Qinghua Mai
+
+
+
+Clone the repository
+cd /var/www/
+sudo rm -rf /var/www/Project1/
+git clone https://github.com/XXC123/Project1.git
+cd Project1/
+composer install
+chmod -R 777 storage/
+chmod -R 777 vendor/
+Configure your environment
+
+php artisan key:generate
+Migrate, and (optionally) seed
+php artisan migrate
+
