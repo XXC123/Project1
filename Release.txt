@@ -1,0 +1,14 @@
+1. Verification code cannot be received due to the Email box settings.
+
+2. The Router of Laravel 5.8 doesn't work 
+The version has been change the 5.3 and Router can work.
+
+3. When the user uploads the images too large, it will cause a display error.
+Use Laravel's extension to automatically resize the image.
+
+4. The password cannot encrypt correctly when finish the employment
+
+5. System erro when customer upload item to the database without image.
+Fixed. When the user did not upload the image, we set the default image to display and avoid system erro.
+
+
