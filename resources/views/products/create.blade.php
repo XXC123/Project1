@@ -46,7 +46,7 @@
 
           <div class="form-group">
             <label >Image：</label>
-            <input type="file" name="cover" id="">
+            <input type="file" name="cover" id="" required="required">
           </div>
 
 

@@ -71,9 +71,11 @@ public function searchproduct(Request $request)
             'series' => 'required|max:20'
         ]);
 
+
         if($request->file('cover')->isValid()){
          $file=$request->file('cover');
      }
+ 
         $path='image';
         $rule=['jpg','png','gif'];
 
