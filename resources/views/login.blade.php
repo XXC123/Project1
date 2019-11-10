@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>StockY - Login</title>
-    <meta name="description" content="Coffee Buzz - Login">
+    <meta name="description" content="StockY - Login">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('resources/community/sufee-admin/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('resources/community/sufee-admin/assets/css/bootstrap.min.css')}}">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="login-form">
                     <div class="login-logo">
-                        <img class="align-content" src="{{asset('resources/images/logo.jpg')}}" alt="" width="55%">
+                        <img class="align-content" src="{{asset('resources/images/logologin.png')}}" alt="" width="55%">
                     </div>                    
                     <br/>
                     <form role="form" action="" method="post">

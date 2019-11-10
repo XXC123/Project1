@@ -32,7 +32,7 @@
                 </div>
                 <div class="login-form">
                     <div class="login-logo">
-                        <img class="align-content" src="{{asset('resources/images/logo.jpg')}}" alt="" width="55%">
+                        <img class="align-content" src="{{asset('resources/images/managericon.png')}}" alt="" width="55%">
                     </div>                    
                     <br/>
                     

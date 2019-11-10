@@ -35,6 +35,6 @@ class ManagerController extends Controller{
 
 
 	public function showHomePage(){
-		return view('/layouts/managerMenu');
+		return view('/managerHome');
 	}
 }

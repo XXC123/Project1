@@ -82,7 +82,7 @@ public function searchproduct(Request $request)
 
 
          $product = Product::create([
-        'customer_id' => Session::get('customer')[0]->id;
+        'customer_id' => Session::get('customer')[0]->id,
 
             'brandname' => $request->brandname,
             'color' => $request->color,
